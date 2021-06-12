@@ -1,0 +1,16 @@
+{
+  "name": "svg-painter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "author": "Gevorg Danelyan",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "rm -rf ./dist & npm run build:ts",
+    "build:ts": "npx tsc"
+  }
+}
