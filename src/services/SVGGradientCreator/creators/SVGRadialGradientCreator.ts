@@ -1,16 +1,15 @@
 import { RadialGradientNode } from "gradient-parser";
 import { Service } from "typedi";
 
-import { StaticImplements } from "../../../utils/StaticImplements";
-
 import { getColorStopProps } from "./helpers/getColorStopProps";
 import { createSVGNSElement } from "./helpers/createSVGNSElement";
-import { SVGGradientCreatorStaticInterface } from "../types";
+import { SVGGradientCreatorInterface } from "../types";
 
 @Service()
-@StaticImplements<SVGGradientCreatorStaticInterface<RadialGradientNode>>()
-export class SVGRadialGradientCreator {
-  static getPositionsForOrientation(
+export class SVGRadialGradientCreator
+  implements SVGGradientCreatorInterface<RadialGradientNode>
+{
+  private static getPositionsForOrientation(
     orientation: RadialGradientNode["orientation"]
   ) {
     return {
